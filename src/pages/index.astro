@@ -2,18 +2,32 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Álvaro Arteaga</title>
+<title>Álvaro Arteaga — Senior Applications Scientist</title>
+<meta name="description" content="Senior Applications Scientist specialising in magneto-optical instrumentation, materials science and AI-driven data analysis. Based in Cambridge, UK." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <style>
+:root {
+  --accent: #1a4a8a;
+  --accent-light: #e8f0fb;
+  --text: #111;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #ffffff;
+  --card-bg: #f8f9fb;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #ffffff;
-  color: #111;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
 /* Fade animation */
@@ -31,21 +45,122 @@ body {
 /* Cards */
 .card {
   transition: all 0.3s ease;
+  border: 1px solid var(--border);
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+  border-color: #c5d5ef;
 }
 
 /* Buttons */
 .btn {
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   display: inline-block;
 }
 
-.btn:hover {
-  transform: scale(1.03);
+.btn-primary:hover {
+  background: var(--accent) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(26,74,138,0.25);
+}
+
+.btn-outline:hover {
+  background: var(--accent-light);
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* Section headings */
+.section-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Skill tags */
+.skill-tag {
+  display: inline-block;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 4px 4px 4px 0;
+}
+
+/* Nav */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--text); }
+
+.nav-links { display: flex; gap: 28px; }
+
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: var(--text) !important;
+  font-weight: normal;
+}
+
+/* Timeline */
+.timeline-entry {
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid var(--border);
+  margin-bottom: 36px;
+}
+
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: -6px; top: 6px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* Publication card */
+.pub-card {
+  border-left: 3px solid var(--accent);
+  padding: 20px 24px;
+  background: var(--card-bg);
+  border-radius: 0 12px 12px 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 32px 40px;
+  color: var(--muted);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
 }
 </style>
 
@@ -53,64 +168,73 @@ body {
 
 <body>
 
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Álvaro Arteaga</a>
+  <div class="nav-links">
+    <a href="#projects">Work</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="mailto:aliv.arteaga@gmail.com">Contact</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <section class="fade" style="
 max-width:1000px;
 margin:auto;
-padding:120px 40px;
+padding:160px 40px 120px;
 ">
 
-<p style="
-color:#6b7280;
-font-size:14px;
-letter-spacing:1px;
-text-transform:uppercase;
-">
-Alvaro Arteaga · Senior Applications Scientist · Cambridge, UK
-</p>
+<p class="section-label">Senior Applications Scientist · Cambridge, UK</p>
 
 <h1 style="
-font-size:72px;
-line-height:1.05;
-margin:20px 0;
-font-weight:700;
+font-family:'DM Serif Display', serif;
+font-size:68px;
+line-height:1.08;
+margin:16px 0 28px;
+font-weight:normal;
+letter-spacing:-1px;
 ">
-Building science-driven AI systems.
+Bridging precision<br><em>instrumentation</em><br>and intelligent systems.
 </h1>
 
 <p style="
-font-size:22px;
-color:#6b7280;
-max-width:750px;
-line-height:1.5;
+font-size:19px;
+color:var(--muted);
+max-width:680px;
+line-height:1.65;
+margin-bottom:40px;
 ">
 Doctor in Materials Science and Mechatronics Engineer working at the intersection of
 physics, instrumentation, data analysis and intelligent systems.
 </p>
 
-<div style="margin-top:40px;">
+<div style="display:flex;gap:12px;flex-wrap:wrap;">
 
-<a href="#projects" class="btn" style="
+<a href="#projects" class="btn btn-primary" style="
 background:#111;
 color:white;
-padding:14px 26px;
+padding:14px 28px;
 border-radius:999px;
 text-decoration:none;
 font-weight:600;
-margin-right:10px;
+font-size:15px;
 ">
-View Projects
+View Work
 </a>
 
-<a href="mailto:your@email.com" class="btn" style="
-border:1px solid #ddd;
+<a href="mailto:aliv.arteaga@gmail.com" class="btn btn-outline" style="
+border:1px solid var(--border);
 color:#111;
-padding:14px 26px;
+padding:14px 28px;
 border-radius:999px;
 text-decoration:none;
 font-weight:600;
+font-size:15px;
 ">
-Contact
+Get in touch
 </a>
 
 </div>
@@ -119,14 +243,15 @@ Contact
 
 <!-- PROJECTS -->
 <section id="projects" style="
-border-top:1px solid #eee;
+border-top:1px solid var(--border);
 padding:100px 40px;
 max-width:1000px;
 margin:auto;
 ">
 
-<h2 class="fade" style="font-size:40px;margin-bottom:40px;">
-Selected Work
+<p class="section-label fade">Selected Work</p>
+<h2 class="fade" style="font-family:'DM Serif Display',serif;font-size:42px;font-weight:normal;margin:0 0 48px;">
+What I do
 </h2>
 
 <div style="
@@ -135,93 +260,124 @@ grid-template-columns:1fr 1fr;
 gap:20px;
 ">
 
-<div class="card fade" style="padding:30px;background:#f5f5f7;border-radius:20px;">
-<h3>Advanced Scientific Instrumentation</h3>
-<p style="color:#666;">
-Validation, optimisation and customer deployment of precision magneto-optical systems.
-</p>
+<div class="card fade" style="padding:32px;background:var(--card-bg);border-radius:16px;">
+  <div style="font-size:28px;margin-bottom:14px;">🔬</div>
+  <h3 style="margin:0 0 10px;font-size:18px;">Advanced Scientific Instrumentation</h3>
+  <p style="color:var(--muted);line-height:1.6;margin:0;font-size:15px;">
+    Validation, optimisation and customer deployment of precision magneto-optical (MOKE) systems for researchers and industrial users worldwide.
+  </p>
 </div>
 
-<div class="card fade" style="padding:30px;background:#f5f5f7;border-radius:20px;">
-<h3>Experimental Method Development</h3>
-<p style="color:#666;">
-Helping researchers design workflows for advanced materials characterisation.
-</p>
+<div class="card fade" style="padding:32px;background:var(--card-bg);border-radius:16px;">
+  <div style="font-size:28px;margin-bottom:14px;">⚗️</div>
+  <h3 style="margin:0 0 10px;font-size:18px;">Experimental Method Development</h3>
+  <p style="color:var(--muted);line-height:1.6;margin:0;font-size:15px;">
+    Designing workflows for advanced materials characterisation, enabling reproducible results across magnetic thin films and spintronic systems.
+  </p>
 </div>
 
-<div class="card fade" style="padding:30px;background:#f5f5f7;border-radius:20px;">
-<h3>AI & Data Analysis</h3>
-<p style="color:#666;">
-Applying machine learning and signal processing to complex experimental datasets.
-</p>
+<div class="card fade" style="padding:32px;background:var(--card-bg);border-radius:16px;">
+  <div style="font-size:28px;margin-bottom:14px;">🤖</div>
+  <h3 style="margin:0 0 10px;font-size:18px;">AI & Data Analysis</h3>
+  <p style="color:var(--muted);line-height:1.6;margin:0;font-size:15px;">
+    Applying machine learning and signal processing pipelines to complex experimental datasets, turning raw measurements into actionable insight.
+  </p>
 </div>
 
-<div class="card fade" style="padding:30px;background:#f5f5f7;border-radius:20px;">
-<h3>Industrial Field Engineering</h3>
-<p style="color:#666;">
-Real-time measurement systems, calibration, and multi-site operations leadership.
-</p>
+<div class="card fade" style="padding:32px;background:var(--card-bg);border-radius:16px;">
+  <div style="font-size:28px;margin-bottom:14px;">🛠️</div>
+  <h3 style="margin:0 0 10px;font-size:18px;">Industrial Field Engineering</h3>
+  <p style="color:var(--muted);line-height:1.6;margin:0;font-size:15px;">
+    Real-time measurement systems, calibration and multi-site operations leadership across demanding oilfield environments.
+  </p>
 </div>
 
+</div>
+
+<!-- SKILLS -->
+<div class="fade" style="margin-top:56px;">
+  <p class="section-label" style="margin-bottom:16px;">Tools & Technologies</p>
+  <div>
+    <span class="skill-tag">MOKE Microscopy</span>
+    <span class="skill-tag">Magneto-optical Systems</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">Machine Learning</span>
+    <span class="skill-tag">Signal Processing</span>
+    <span class="skill-tag">Materials Characterisation</span>
+    <span class="skill-tag">Thin Films</span>
+    <span class="skill-tag">Spintronics</span>
+    <span class="skill-tag">PID Control</span>
+    <span class="skill-tag">LabVIEW</span>
+    <span class="skill-tag">Customer Training</span>
+    <span class="skill-tag">Data Visualisation</span>
+  </div>
 </div>
 
 </section>
 
 <!-- ABOUT -->
-<section class="fade" style="
+<section id="about" class="fade" style="
 padding:100px 40px;
 max-width:900px;
 margin:auto;
-border-top:1px solid #eee;
+border-top:1px solid var(--border);
 ">
 
-<h2 style="font-size:40px;">About</h2>
+<p class="section-label">About</p>
+<h2 style="font-family:'DM Serif Display',serif;font-size:42px;font-weight:normal;margin:0 0 28px;">
+A scientist who builds things that work.
+</h2>
 
-<p style="font-size:18px;color:#555;line-height:1.6;">
+<p style="font-size:18px;color:#555;line-height:1.7;margin-bottom:20px;">
 I am a Senior Applications Scientist with international experience across research,
 engineering and industrial operations. My career combines materials science,
 instrument commissioning, customer-facing technical support and advanced data analysis.
+</p>
+
+<p style="font-size:18px;color:#555;line-height:1.7;">
 I specialise in translating complex physical systems into practical tools that solve
-real-world problems for scientists, engineers and technology teams.
+real-world problems for scientists, engineers and technology teams — from optimising
+measurement hardware to deploying AI-assisted data pipelines.
 </p>
 
 </section>
 
 <!-- EXPERIENCE -->
-<section class="fade" style="
+<section id="experience" class="fade" style="
 padding:100px 40px;
 max-width:1000px;
 margin:auto;
-border-top:1px solid #eee;
+border-top:1px solid var(--border);
 ">
 
-<h2 style="font-size:40px;margin-bottom:40px;">Experience</h2>
+<p class="section-label">Experience</p>
+<h2 style="font-family:'DM Serif Display',serif;font-size:42px;font-weight:normal;margin:0 0 48px;">Career</h2>
 
-<div style="margin-bottom:40px;">
-<h3 style="margin-bottom:8px;">Durham Magneto Optics Ltd</h3>
-<p style="color:#666;margin-top:0;">Senior Applications Scientist · Jan 2025 – Present</p>
-<p style="color:#555;line-height:1.6;">
-Leading scientific applications support, customer training, system performance validation,
-new market development, and advanced measurement solutions.
-</p>
+<div class="timeline-entry">
+  <h3 style="margin:0 0 4px;font-size:18px;">Durham Magneto Optics Ltd</h3>
+  <p style="color:var(--accent);font-weight:500;margin:0 0 10px;font-size:14px;">Senior Applications Scientist · Jan 2025 – Present</p>
+  <p style="color:#555;line-height:1.65;margin:0;">
+    Leading scientific applications support, customer training, system performance validation,
+    new market development, and advanced measurement solutions.
+  </p>
 </div>
 
-<div style="margin-bottom:40px;">
-<h3 style="margin-bottom:8px;">Durham Magneto Optics Ltd</h3>
-<p style="color:#666;margin-top:0;">Applications Scientist · Mar 2020 – Dec 2024</p>
-<p style="color:#555;line-height:1.6;">
-Supported researchers and industrial users in experimental protocol development,
-instrument demonstrations, technical troubleshooting and materials analysis.
-</p>
+<div class="timeline-entry">
+  <h3 style="margin:0 0 4px;font-size:18px;">Durham Magneto Optics Ltd</h3>
+  <p style="color:var(--accent);font-weight:500;margin:0 0 10px;font-size:14px;">Applications Scientist · Mar 2020 – Dec 2024</p>
+  <p style="color:#555;line-height:1.65;margin:0;">
+    Supported researchers and industrial users in experimental protocol development,
+    instrument demonstrations, technical troubleshooting and materials analysis.
+  </p>
 </div>
 
-<div>
-<h3 style="margin-bottom:8px;">SLB</h3>
-<p style="color:#666;margin-top:0;">M/LWD Field Engineer · Jun 2010 – Aug 2012</p>
-<p style="color:#555;line-height:1.6;">
-Acquired and interpreted petrophysical data, configured drilling tools,
-trained engineers and led operations across five active rigs.
-</p>
+<div class="timeline-entry" style="margin-bottom:0;">
+  <h3 style="margin:0 0 4px;font-size:18px;">SLB (Schlumberger)</h3>
+  <p style="color:var(--accent);font-weight:500;margin:0 0 10px;font-size:14px;">M/LWD Field Engineer · Jun 2010 – Aug 2012</p>
+  <p style="color:#555;line-height:1.65;margin:0;">
+    Acquired and interpreted petrophysical data, configured drilling tools,
+    trained engineers and led operations across five active rigs.
+  </p>
 </div>
 
 </section>
@@ -231,67 +387,80 @@ trained engineers and led operations across five active rigs.
 padding:100px 40px;
 max-width:1000px;
 margin:auto;
-border-top:1px solid #eee;
+border-top:1px solid var(--border);
 ">
 
-<h2 style="font-size:40px;margin-bottom:40px;">Education</h2>
+<p class="section-label">Education</p>
+<h2 style="font-family:'DM Serif Display',serif;font-size:42px;font-weight:normal;margin:0 0 48px;">Academic Background</h2>
 
-<div style="margin-bottom:30px;">
-<h3 style="margin-bottom:8px;">PhD in Materials Science</h3>
-<p style="color:#666;margin-top:0;">Centro de Investigación en Materiales Avanzados · 2015 – 2019</p>
+<div class="timeline-entry">
+  <h3 style="margin:0 0 4px;font-size:18px;">PhD in Materials Science</h3>
+  <p style="color:var(--accent);font-weight:500;margin:0 0 6px;font-size:14px;">Centro de Investigación en Materiales Avanzados (CIMAV) · 2015 – 2019</p>
+  <p style="color:#555;line-height:1.6;margin:0;font-size:15px;">Focused on magnetic interfaces, thin films, ferromagnetic resonance and materials characterisation.</p>
 </div>
 
-<div>
-<h3 style="margin-bottom:8px;">Mechatronics Engineering</h3>
-<p style="color:#666;margin-top:0;">Engineering Background in automation, systems and instrumentation</p>
+<div class="timeline-entry" style="margin-bottom:0;">
+  <h3 style="margin:0 0 4px;font-size:18px;">B.Eng. Mechatronics Engineering</h3>
+  <p style="color:var(--accent);font-weight:500;margin:0;font-size:14px;">Specialisation in automation, control systems and scientific instrumentation</p>
 </div>
 
 </section>
 
 <!-- PUBLICATIONS -->
-<section class="fade" style="
+<section id="publications" class="fade" style="
 padding:100px 40px;
 max-width:1000px;
 margin:auto;
-border-top:1px solid #eee;
+border-top:1px solid var(--border);
 ">
 
-<h2 style="font-size:40px;margin-bottom:40px;">Publications</h2>
+<p class="section-label">Publications</p>
+<h2 style="font-family:'DM Serif Display',serif;font-size:42px;font-weight:normal;margin:0 0 48px;">Research</h2>
 
-<div>
-<h3 style="margin-bottom:8px;">High-resolution electron microscopy in spin pumping NiFe/Pt interfaces</h3>
-<p style="color:#666;line-height:1.6;">
-Journal of Applied Physics · Research focused on magnetic interfaces,
-thin films, ferromagnetic resonance and materials characterisation.
-</p>
+<div class="pub-card">
+  <p style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:0 0 8px;font-weight:600;">Journal of Applied Physics</p>
+  <h3 style="margin:0 0 10px;font-size:17px;line-height:1.4;">High-resolution electron microscopy in spin pumping NiFe/Pt interfaces</h3>
+  <p style="color:#555;line-height:1.6;margin:0 0 14px;font-size:15px;">
+    Research focused on magnetic interfaces, thin films, ferromagnetic resonance and materials characterisation.
+  </p>
+  <a href="https://scholar.google.com" target="_blank" rel="noopener" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">
+    View on Google Scholar →
+  </a>
 </div>
 
 </section>
 
 <!-- CONTACT -->
 <section class="fade" style="
-padding:80px 40px;
+padding:100px 40px;
 text-align:center;
-border-top:1px solid #eee;
+border-top:1px solid var(--border);
+background:linear-gradient(to bottom, var(--bg), var(--accent-light));
 ">
 
-<h2 style="font-size:32px;">Let’s work together</h2>
+<p class="section-label" style="text-align:center;">Contact</p>
+<h2 style="font-family:'DM Serif Display',serif;font-size:48px;font-weight:normal;margin:0 0 16px;">Let’s work together</h2>
 
-<p style="color:#666;">Open to collaborations, research and industry roles.</p>
+<p style="color:var(--muted);font-size:18px;max-width:480px;margin:0 auto 36px;line-height:1.6;">Open to collaborations, consulting, research partnerships and industry roles.</p>
 
-<a href="mailto:your@email.com" class="btn" style="
-margin-top:20px;
+<a href="mailto:aliv.arteaga@gmail.com" class="btn btn-primary" style="
 background:#111;
 color:white;
-padding:14px 28px;
+padding:16px 32px;
 border-radius:999px;
 text-decoration:none;
 display:inline-block;
+font-weight:600;
+font-size:16px;
 ">
-Email me
+aliv.arteaga@gmail.com
 </a>
 
 </section>
+
+<footer>
+  © 2025 Álvaro Arteaga · Cambridge, UK
+</footer>
 
 <!-- SCROLL ANIMATION SCRIPT -->
 <script>
